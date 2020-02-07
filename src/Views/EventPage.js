@@ -5,7 +5,8 @@ import axios from 'axios';
      constructor(props){
          super(props)
          this.state ={
-
+            venue: {},
+            id:''
          }
      }
 
@@ -19,8 +20,9 @@ import axios from 'axios';
      }
      render(){
          return(
-            <>
-            </>
+            <div>
+            EVENT
+            </div>
          )
      }
  }
