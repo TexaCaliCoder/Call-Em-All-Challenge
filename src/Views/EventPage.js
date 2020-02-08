@@ -1,6 +1,9 @@
 import React  from 'react';
 import axios from 'axios';
 
+//styles
+import { EventWrapper, EventLeftSide, EventRightSide  } from '../Styles/eventStyles/eventPageStyles'
+
  class Event extends React.Component {
      constructor(props){
          super(props)
@@ -30,10 +33,16 @@ import axios from 'axios';
      }
      render(){
          console.log(this.state)
+         const {id, venue, group, date, time } = this.state;
          return(
-            <div>
-            EVENT
-            </div>
+            <EventWrapper>
+                <EventLeftSide>
+                    left
+                </EventLeftSide>
+                <EventRightSide>
+                    right
+                </EventRightSide>
+            </EventWrapper>
          )
      }
  }
