@@ -16,7 +16,8 @@ export const EventLeftSide = styled.div`
 
 export const EventRightSide = styled.div`
 	color: white;
-	width: 25%;
+    width: 25%;
+    height: 90%;
 	margin-left: 2%;
 	border: 1px solid green;
 `;

@@ -4,12 +4,14 @@ import axios from 'axios';
 //styles
 import { EventWrapper, EventLeftSide, EventRightSide  } from '../Styles/eventStyles/eventPageStyles'
 
+//components 
+import Map from '../Components/eventComponents/Map'
+
  class Event extends React.Component {
      constructor(props){
          super(props)
          this.state ={
              id:'',
-            venue: {},
             group: {},
 
          }
@@ -40,7 +42,7 @@ import { EventWrapper, EventLeftSide, EventRightSide  } from '../Styles/eventSty
                     left
                 </EventLeftSide>
                 <EventRightSide>
-                    right
+                    {venue ? <Map lat={venue.lat} lng={venue.lon} />: "nothing"}
                 </EventRightSide>
             </EventWrapper>
          )
