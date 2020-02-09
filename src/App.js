@@ -18,7 +18,7 @@ const App = () => {
     <AppWrapper>
       <Scrollbars >
      <Route exact path='/' component={Landing} />
-     <Route path='/DallasMeetup' component={Event} />
+     <Route exact path='/DallasMeetup' component={Event} />
      <Route path='/DallasMeetup/:id/RSVP' component={RSVP} />
     </Scrollbars>
     </AppWrapper>

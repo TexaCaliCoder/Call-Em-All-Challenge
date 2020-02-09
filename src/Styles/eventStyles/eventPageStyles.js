@@ -45,6 +45,9 @@ export const EventLeftSide = styled.div`
             font-family:Prompt;
             padding: 2px 2px 2px 20px;
         }
+        a{
+            color:teal;
+        }
   
     }
 
@@ -61,6 +64,10 @@ export const EventRightSide = styled.div`
     @media (max-width: 900px){
      width: 90%;
      align-items: center;
+    }
+    .map{
+        height:auto;
+        width:100%
     }
     
     .topRight{

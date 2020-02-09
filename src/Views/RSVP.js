@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { Redirect, withRouter } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 
 import { Button } from '../Components/main/Button'
 
@@ -37,7 +37,7 @@ import { Button } from '../Components/main/Button'
         const {waitlist, going, redirect} = this.state;
 
         if (redirect) {
-            return <Redirect exact to='/DallasMeetup/' />;
+            return <Redirect exact to='/DallasMeetup' />;
           }
     return(
        <>
@@ -56,4 +56,4 @@ import { Button } from '../Components/main/Button'
         </>
     )}
 }
-export default withRouter(RSVP);
+export default RSVP;

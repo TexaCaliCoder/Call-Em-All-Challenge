@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import parse from "html-react-parser";
-import { Redirect, withRouter } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 import { Scrollbars } from "react-custom-scrollbars";
 import { formatTime, datePrettier } from "../Helpers/dateHelpers";
@@ -31,7 +31,6 @@ class Event extends React.Component {
 	}
 
 	componentDidMount() {
-		console.log("poop");
 		axios
 			.get(
 				"https://cors-anywhere.herokuapp.com/https://api.meetup.com/reactjs-dallas/events?&sign=true&photo-host=public&page=1"
@@ -103,4 +102,4 @@ class Event extends React.Component {
 	}
 }
 
-export default withRouter(Event);
+export default Event;

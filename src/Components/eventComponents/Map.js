@@ -8,7 +8,7 @@ class MapContainer extends React.Component{
         }
     }
     render(){
-        let mapStyle = { height: '40vh', position:'relative' };
+        let mapStyle = { height: '400px', width:'100%', position:'relative' };
       
         const { lat, lng, google } = this.props
         const latLng = {
@@ -16,7 +16,7 @@ class MapContainer extends React.Component{
             lng: lng
         }
         return(
-            <div style = {{width:'100%'}}>
+            <div style = {{width:'100%', height:'100%'}}>
             <Map
                 containerStyle={{position: 'relative'}}
                 google = {google}

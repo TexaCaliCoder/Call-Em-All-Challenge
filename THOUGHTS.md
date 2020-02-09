@@ -6,4 +6,7 @@ efficiently by using functional components to be passed to the class components 
 
 I realize that I am building all of this on master. I would normally create a branch for develop, a testing branch, and then a branch for each page and feature.
 
-I spent most of my time building the event page because it has a majority of the data. I could have easily added the rsvp stats to the event page but instead I wanted to take the time to showcase the use of routes with URL params. 
+I spent most of my time building the event page because it has a majority of the data. I could have easily added the rsvp stats to the event page but instead I wanted to take the time to showcase the use of routes with URL params.
+
+searched High and Low to resolve the CORS issue and found a workaround using cors-anywhere.herokuapp.com to preppend my axios call.
+
