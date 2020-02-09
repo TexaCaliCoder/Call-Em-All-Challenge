@@ -16,6 +16,7 @@ import {
 //components
 import Map from "../Components/eventComponents/Map";
 import { Button } from "../Components/main/Button";
+import Loading from '../Components/main/Loading'
 
 class Event extends React.Component {
 	constructor(props) {
@@ -60,7 +61,9 @@ class Event extends React.Component {
 		}
 
 		return (
-			<EventWrapper>
+			<>
+			{ !this.state.venue ? <Loading /> : 
+				(<EventWrapper>
 				<EventLeftSide>
 					<div className='topLeft'>
 						<h1> NEXT {group.name} MEETUP</h1>
@@ -97,7 +100,8 @@ class Event extends React.Component {
 						/>
 					</div>
 				</EventRightSide>
-			</EventWrapper>
+			</EventWrapper>)}
+			</>
 		);
 	}
 }

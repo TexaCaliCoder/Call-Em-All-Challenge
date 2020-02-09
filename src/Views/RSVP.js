@@ -2,7 +2,12 @@ import React from 'react';
 import axios from 'axios';
 import { Redirect } from 'react-router-dom'
 
+//components
 import { Button } from '../Components/main/Button'
+import Loading from '../Components/main/Loading'
+
+//style
+import { RsvpWrapper } from '../Styles/rsvpStyles/rsvpStyle';
 
  class RSVP extends React.Component{
     constructor(props){
@@ -41,7 +46,10 @@ import { Button } from '../Components/main/Button'
           }
     return(
        <>
-       <div>
+       {this.state.going.length<1 ? <Loading />:
+       (
+       <RsvpWrapper>
+       <div className='main'>
            <h1> RSVP DATA: </h1>
         </div>
         <div>
@@ -50,9 +58,10 @@ import { Button } from '../Components/main/Button'
         <div>
             <h3> WAIT-LIST: {waitlist.length} </h3>  
         </div>
-        <div>
+        <div className='buttonWrapper'>
             <Button label='Back to Event' click={this.redirectHandle}/>
         </div>
+        </RsvpWrapper>)}
         </>
     )}
 }
