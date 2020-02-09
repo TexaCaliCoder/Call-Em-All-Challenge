@@ -1,6 +1,5 @@
 import React from 'react';
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
-
 class MapContainer extends React.Component{
     constructor(props){
         super()
@@ -9,21 +8,24 @@ class MapContainer extends React.Component{
         }
     }
     render(){
-
+        let mapStyle = { height: '40vh', position:'relative' };
+      
         const { lat, lng, google } = this.props
         const latLng = {
             lat: lat,
             lng: lng
         }
-        console.log(this.props)
         return(
+            <div style = {{width:'100%'}}>
             <Map
+                containerStyle={{position: 'relative'}}
                 google = {google}
                 zoom = {16}
-                style = {{width: '25vw', height: '40vh'}}
+                style = {mapStyle}
                 initialCenter={latLng} >
                   <Marker position={latLng} onClick={this.redirect}/>
             </Map>
+            </div>
     
         )
     }

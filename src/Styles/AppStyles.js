@@ -7,4 +7,10 @@ export const AppWrapper = styled.div`
     position: fixed;
     height: 100%;
     width: 100%; 
+    overflow: auto;
+    @media(max-height: 900){
+        position: static;
+        height: auto;
+        min-height:100%
+    }
 `
