@@ -47,7 +47,7 @@ import { Button } from '../Components/main/Button';
          const {id, venue, group, datetime, desc, redirect } = this.state;
 
          if (redirect) {
-            return <Redirect push to={`/DallasMeetup/${id}/RSVP`} />;
+            return <Redirect  exact push to={`/DallasMeetup/${id}/RSVP`} />;
           }
 
          return(

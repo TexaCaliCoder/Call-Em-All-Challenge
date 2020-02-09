@@ -1,52 +1,59 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import axios from 'axios';
-import { Redirect, withRouter } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 
 import { Button } from '../Components/main/Button'
 
- const RSVP =(props) =>{
-    const [going, setGoing] = useState([]);
-    const [waitList, setWaitList] = useState([]);
-    const [goBack, setGoBack] = useState(false)
+ class RSVP extends React.Component{
+    constructor(props){
+        super(props)
+        this.state={
+            going: [],
+            waitlist: [], 
+            redirect:false
+        }
+
+        this.redirectHandle = () =>{
+            this.setState({redirect:true})
+        }
+    }
 
 
-    useEffect(() =>{
-        const { id } = props.match.params
+    componentDidMount(){
+        const { id } = this.props.match.params
 
         axios.get(`https://api.meetup.com/reactjs-dallas/events/${id}/rsvps?&sign=true&photo-host=public`)
             .then(res =>{
                     const going = res.data.filter(item => item.response === 'yes')
                     const wait = res.data.filter(item => item.response === 'waitlist')
-                    const guests = res.data.filter(item => item.response === 'waitlist')
-                    setGoing(going)
-                    setWaitList(wait)
+                    this.setState({going: going, waitlist: wait})
                     console.log(res.data)
             }).catch(err=> console.log(err))
-    })
-
-    const redirectHandle = () =>{
-        setGoBack(true)
     }
-    
-    if (goBack) {
-        return <Redirect push to={'/DallasMeetup'} />;
-      }
 
+    
+
+    render(){
+        const {waitlist, going, redirect} = this.state;
+
+        if (redirect) {
+            return <Redirect exact to='/DallasMeetup' />;
+          }
     return(
-        <>
-        <div style={{color:'white'}}>
+       <>
+       <div>
            <h1> RSVP DATA: </h1>
         </div>
         <div>
             <h3> GOING: {going.length} </h3>  
         </div>
         <div>
-            <h3> WAIT-LIST: {waitList.length} </h3>  
+            <h3> WAIT-LIST: {waitlist.length} </h3>  
         </div>
         <div>
-            <Button label='Back to Event' click={redirectHandle}/>
+            <Button label='Back to Event' click={this.redirectHandle}/>
         </div>
         </>
-    )
+    )}
 }
 export default RSVP;
