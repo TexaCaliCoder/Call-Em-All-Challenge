@@ -19,8 +19,12 @@ export const RsvpWrapper = styled.div`
         margin-top: 2%
     }
     @media(max-width:900px){
+        .buttonWrapper{
+            width: 50%
+        }
         .buttonComp{
-            width:90%;
+            width:100%;
+            height: 100%;
         }
     }
 `

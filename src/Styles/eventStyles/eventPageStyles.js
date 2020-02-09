@@ -29,6 +29,9 @@ export const EventLeftSide = styled.div`
 
     .topLeft{
         align-self:center;
+        @media(max-width:900px){
+               text-align: center;
+           }
     }
     .deets{
         h3{
@@ -64,6 +67,13 @@ export const EventRightSide = styled.div`
     @media (max-width: 900px){
      width: 90%;
      align-items: center;
+     .rightButton{
+         width:100%;
+         margin-bottom: 4%;
+     }
+     .buttonComp{
+         width: 100%;
+     }
     }
     .map{
         height:auto;
@@ -76,6 +86,7 @@ export const EventRightSide = styled.div`
        h3{
            font-family:Righteous;
            letter-spacing: 4px;
+          
        }
     }
      .bottomRight{

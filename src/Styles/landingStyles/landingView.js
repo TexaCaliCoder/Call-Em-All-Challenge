@@ -12,8 +12,14 @@ export const LandingWrapper = styled.div`
         font-family:Righteous;
     }
     @media(max-width: 900px){
+        width: 95%;
+        align-items: center;
+        margin:4%;
         .buttonComp{
             width:70%;
+        }
+        h1{
+            text-align: center;
         }
     }
 `
