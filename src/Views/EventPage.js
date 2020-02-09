@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import parse from "html-react-parser";
-import { Redirect } from "react-router-dom";
+import { Redirect, withRouter } from "react-router-dom";
 
 import { Scrollbars } from "react-custom-scrollbars";
 import { formatTime, datePrettier } from "../Helpers/dateHelpers";
@@ -53,7 +53,7 @@ class Event extends React.Component {
 	}
 
 	render() {
-		console.log(this.state);
+		
 		const { id, venue, group, datetime, desc, redirect } = this.state;
 
 		if (redirect) {
@@ -103,4 +103,4 @@ class Event extends React.Component {
 	}
 }
 
-export default Event;
+export default withRouter(Event);
