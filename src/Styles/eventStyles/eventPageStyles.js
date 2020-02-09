@@ -30,7 +30,12 @@ export const EventLeftSide = styled.div`
     .topLeft{
         align-self:center;
     }
-
+    .deets{
+        h3{
+            font-family:Righteous;
+            letter-spacing:2px;
+        }
+    }
     .textDesc{
         height: 60vh;
         overflow: auto;

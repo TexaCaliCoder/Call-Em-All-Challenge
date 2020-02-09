@@ -22,7 +22,7 @@ import { Button } from '../Components/main/Button'
     componentDidMount(){
         const { id } = this.props.match.params
 
-        axios.get(`https://api.meetup.com/reactjs-dallas/events/${id}/rsvps?&sign=true&photo-host=public`)
+        axios.get(`https://cors-anywhere.herokuapp.com/https://api.meetup.com/reactjs-dallas/events/${id}/rsvps?&sign=true&photo-host=public`)
             .then(res =>{
                     const going = res.data.filter(item => item.response === 'yes')
                     const wait = res.data.filter(item => item.response === 'waitlist')
