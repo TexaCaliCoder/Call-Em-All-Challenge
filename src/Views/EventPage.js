@@ -1,7 +1,10 @@
 import React  from 'react';
 import axios from 'axios';
 import parse from 'html-react-parser';
+import { Redirect } from 'react-router-dom'
+
 import { Scrollbars } from 'react-custom-scrollbars';
+import {formatTime, datePrettier} from '../Helpers/dateHelpers'
 
 //styles
 import { EventWrapper, EventLeftSide, EventRightSide  } from '../Styles/eventStyles/eventPageStyles'
@@ -15,9 +18,12 @@ import { Button } from '../Components/main/Button';
          super(props)
          this.state ={
              id:'',
-            group: {},
-
+             group:{},
+            redirect: false
          }
+        this.redirect = () =>{
+            this.setState({redirect: true})
+        }
      }
 
      componentDidMount(){
@@ -29,8 +35,7 @@ import { Button } from '../Components/main/Button';
                  venue:res.venue,
                  id: res.id,
                  group: res.group,
-                 date: res.local_date,
-                 time: res.local_time,
+                 datetime: res.time,
                  desc: res.description
              })
          }).catch(err =>{
@@ -39,7 +44,12 @@ import { Button } from '../Components/main/Button';
      }
      render(){
          console.log(this.state)
-         const {id, venue, group, date, time, desc } = this.state;
+         const {id, venue, group, datetime, desc, redirect } = this.state;
+
+         if (redirect) {
+            return <Redirect push to={`/DallasMeetup/${id}/RSVP`} />;
+          }
+
          return(
             <EventWrapper>
                 <EventLeftSide>
@@ -47,8 +57,8 @@ import { Button } from '../Components/main/Button';
                         <h1> NEXT {group.name} MEETUP</h1>
                     </div>
                     <div>
-                        <h5>When:{time}</h5>
-                        <h5>Where:</h5>
+                        <h5>When:  {datePrettier(datetime)}  @ {formatTime(datetime)}</h5>
+                        <h5>Where: {venue?` ${venue.address_1} ${venue.city} ${venue.state},  ${venue.zip}`:null}  </h5>
                     </div>
                     <div className='textDesc'>
                         <Scrollbars>
@@ -67,7 +77,7 @@ import { Button } from '../Components/main/Button';
                         <p>For more detailed information click the marker on the map</p>
                     </div>
                     <div className='rightButton'>
-                        <Button label='RSVP DETAILS' width='100%' height='60px' click={()=>console.log('click')}/>
+                        <Button label='RSVP DETAILS' width='100%' height='60px' click={this.redirect}/>
                     </div>
                 </EventRightSide>
             </EventWrapper>
