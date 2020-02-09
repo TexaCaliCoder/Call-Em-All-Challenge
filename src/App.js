@@ -9,7 +9,7 @@ import { AppWrapper } from './Styles/AppStyles';
 //Views
 import  Event  from './Views/EventPage';
 import  Landing  from './Views/Landing';
-import  RSVP  from './Views/RSVP';
+import  RSVP from './Views/RSVP';
 
 
 
