@@ -41,4 +41,8 @@ h4{
       animation: ${ellipsis} 2s linear infinite;
     }
 }
+
+@media(max-width:900px){
+  width:60%;
+}
 `

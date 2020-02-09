@@ -11,4 +11,9 @@ export const LandingWrapper = styled.div`
         color: white;
         font-family:Righteous;
     }
+    @media(max-width: 900px){
+        .buttonComp{
+            width:70%;
+        }
+    }
 `

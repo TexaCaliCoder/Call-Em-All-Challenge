@@ -18,7 +18,7 @@ const Landing = props =>{
             <h1 style={{fontSize: '3.6em'}}>
                 Welcome to my assessment!
             </h1>
-            <Button click={ () => setRedirect(true) }  label='CHECK OUT WHATS NEXT' height='10vh' width='25%' />
+                <Button click={ () => setRedirect(true) }  label='CHECK OUT WHATS NEXT' height='10vh' width='25%' />
         </LandingWrapper>}
         </>
     )

@@ -10,3 +10,4 @@ I spent most of my time building the event page because it has a majority of the
 
 searched High and Low to resolve the CORS issue and found a workaround using cors-anywhere.herokuapp.com to preppend my axios call.
 
+I probably could have done more like displaying user images and names for going and waitlist. but I chose to make the site mobile responsive instead. I realize I had a week for this but I don't have a lot of personal time from my current job which is a reason I am looking else where among other reasons. 

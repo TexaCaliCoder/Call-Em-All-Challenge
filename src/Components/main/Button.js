@@ -7,7 +7,7 @@ import { ButtonWrapper } from '../../Styles/componentStyles/buttonStyle';
 export const Button = props =>{
     const { click, label, height, width} = props
     return(
-        <ButtonWrapper onClick={click} height={height} width={width} >
+        <ButtonWrapper onClick={click} height={height} width={width} className='buttonComp' >
             <p>{label}</p>
         </ButtonWrapper>
     )
