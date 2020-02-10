@@ -32,7 +32,6 @@ import { RsvpWrapper } from '../Styles/rsvpStyles/rsvpStyle';
                     const going = res.data.filter(item => item.response === 'yes')
                     const wait = res.data.filter(item => item.response === 'waitlist')
                     this.setState({going: going, waitlist: wait})
-                    console.log(res.data)
             }).catch(err=> console.log(err))
     }
 

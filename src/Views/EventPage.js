@@ -37,7 +37,6 @@ class Event extends React.Component {
 				"https://cors-anywhere.herokuapp.com/https://api.meetup.com/reactjs-dallas/events?&sign=true&photo-host=public&page=1"
 			)
 			.then(response => {
-				console.log(response.data[0].id);
 				let res = response.data[0];
 				this.setState({
 					venue: res.venue,
