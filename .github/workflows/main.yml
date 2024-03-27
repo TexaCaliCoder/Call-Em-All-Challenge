@@ -21,6 +21,4 @@ jobs:
         uses: peter-evans/enable-pull-request-automerge@v1
         with:
           token: "${{ secrets.MY_PAT }}" 
-          pull-request-number: 0
-          label-filter: "dependencies"
           enable-for-draft-pr: false
