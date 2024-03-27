@@ -14,4 +14,4 @@ jobs:
         uses: ahmadnassri/action-dependabot-auto-merge@v2
         with:
           target: all # Specify which updates to auto-merge (patch, minor, major, all)
-          github-token: "${{ secrets.GITHUB_TOKEN }}"
+          github-token: "${{ secrets.MY_PAT }}"
