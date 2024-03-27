@@ -21,7 +21,6 @@ jobs:
         uses: peter-evans/enable-pull-request-automerge@v1
         with:
           github-token: "${{ secrets.MY_PAT }}" 
-          repository: ${{ github.repository }}
           pull-request-number: 0
           label-filter: "dependencies"
           enable-for-draft-pr: false
