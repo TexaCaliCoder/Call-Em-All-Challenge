@@ -11,11 +11,17 @@ permissions:  # This sets permissions for the GITHUB_TOKEN
   pull-requests: write
 
 jobs:
-  auto-merge:
+  automerge:
     runs-on: ubuntu-latest
     steps:
-      - name: Automatically merge Dependabot PRs
-        uses: ahmadnassri/action-dependabot-auto-merge@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      
+      - name: Enable auto-merge for Dependabot PRs
+        uses: peter-evans/enable-pull-request-automerge@v1
         with:
-          target: all # Specify which updates to auto-merge (patch, minor, major, all)
           github-token: "${{ secrets.MY_PAT }}" 
+          repository: ${{ github.repository }}
+          pull-request-number: 0
+          label-filter: "dependencies"
+          enable-for-draft-pr: false
